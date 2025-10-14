@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+
+  <link rel="canonical" href="https://www.whoaintfollowingmeback.com/">
+
+  <meta name="description" content="Find out who isn’t following you back on Instagram™ with Who Aint Following Me Back. Compare followers vs. following instantly in your browser. Not affiliated with Instagram™.">
+  <meta name="keywords" content="Instagram unfollow checker, who unfollowed me, Instagram followers, Instagram following, Instagram tool, Instagram extension, unfollow tool, check followers, Chrome extension, Who Aint Following Me Back">
+
+  <!--Social Media Display-->
+  <meta property="og:title" content="Who Aint Following Me Back - Social Media Follower Checker">
+  <meta property="og:description" content="Find out who isn’t following you back on Instagram™ with Who Aint Following Me Back. Compare followers vs. following instantly in your browser. Not affiliated with Instagram™.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.whoaintfollowingmeback.com/">
+  <meta property="og:image" content="/images/banner.png">
+  <meta property="og:image:secure_url" content="/images/banner.png">
+
+  <!--Favicons-->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="W.A.F.M.B">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <!--Styles-->
+  <link rel="stylesheet" href="/css/root.css">
+  <link rel="stylesheet" href="/css/critical.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+
+  <!--Defer loading the whole page css-->
+  <link rel="stylesheet" href="/css/local.css" media="print" onload="this.media='all'; this.onload=null;">
+
+  <!--If the user has javascript disbaled, load these stylesheets-->
+  <noscript>
+    <link rel="stylesheet" href="/css/local.css">
+  </noscript>
+
+  <title>Who Aint Following Me Back - Social Media Follower Checker</title>
+</head>
+<body>
+  <!--Screen reader skip main nav-->
+  <a class="skip" aria-label="skip to main content" href="#main">Click To Skip To Main Content</a>
+  
+  <!-- ============================================ -->
+  <!--                 Navigation                   -->
+  <!-- ============================================ -->
+  <div id="navbar" class="navbar-container">
+    <a href="/" aria-label="home">
+      <img class="navbar-logo" aria-hidden="true" src="/images/logo-light.svg" decoding="async" alt="website logo" width="235" height="78">
+    </a>
+    <a href="https://chromewebstore.google.com/detail/chjeceecgnceagfbmabmkonhginfgknn?utm_source=item-share-cb" aria-label="add to chrome">
+      <div class="add-chrome-button">
+        <img src="/images/google-chrome-icon.svg" alt="google chrome icon">
+        <p>Add to Chrome</p>
+      </div>
+    </a>
+  </div>
+  <main id="main">
+
+    <section class="cta">
+      <h1>Who isn't following <span style="color: #ff0000;">YOU</span> back? 🤔</h1>
+      <p class="cta-subtext">The <strong style="color: #03c30f;">SAFEST</strong> way to check who isn't following you back on <strong style="color: #ff3288;">Instagram</strong></p>
+      <!-- <span style="color: rgb(255, 59, 59); font-size: 0.9rem; letter-spacing: 0; margin-bottom: 1rem;">troubleshooting a bug, once I fix it I will make an update -Roger</span> -->
+      <!-- <a class="disabled" href="https://chromewebstore.google.com/detail/chjeceecgnceagfbmabmkonhginfgknn?utm_source=item-share-cb" aria-label="add to chrome">
+        <div class="add-chrome-button">
+          <img src="/images/google-chrome-icon.svg" alt="google chrome icon">
+          <p>Add to Chrome</p>
+        </div>
+      </a> -->
+    </section>
+
+    <div class="loader-container" id="loader">
+      <div class="loader"></div>
+      <div class="loader-label">Working on it...</div>
+    </div>
+
+    <div class="upload-section" id="uploadSection">
+      <input type="file" id="zipInput" accept=".zip" />
+      <label class="upload-label">Drag & Drop your ZIP file here<br>or click to browse</label>
+    </div>
+    
+    <div id="output"></div>
+
+    <button class="downloadCsvBtn" id="downloadCsvBtn">
+      <p>Download CSV</p>
+    </button>
+
+    <div class="hooks">
+      <div class="hook">
+        <strong>✅  No Login Required</strong>
+        <p>Your social media account credentials stay safe — this extension works right inside your browser, no accounts or passwords needed.</p>
+      </div>
+      <div class="hook">
+        <strong>✅  100% Secure & Private</strong>
+        <p>All processing happens locally on your computer. Nothing is sent to external servers.</p>
+      </div>
+      <div class="hook">
+        <strong>✅ Safe & Non-Suspicious</strong>
+        <p>Unlike other tools, this extension doesn’t automate actions or spam. It simply compares your followers and following lists.</p>
+      </div>
+    </div>
+
+    <div class="pitch">
+      <div class="pitch-text">
+        <p>Other tools cause this... 😬</p>
+        <small>(which defeats the purpose)</small>
+      </div>
+      <img src="/images/instagram-warning.webp" alt="instagram warning">
+    </div>
+
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>1/11</strong>
+            Click on "More" and go to your account settings
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D1.png" alt="desktop instruction one">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>2/11</strong>
+            Go to the Accounts Center and click on "See more in Accounts Center"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D2.png" alt="desktop instruction two">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>3/11</strong>
+            Go to "Your information and permissions" tab and then click "Export your information"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D3.png" alt="desktop instruction three">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>4/11</strong>
+            Click on "Create export"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D4.png" alt="desktop instruction four">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>5/11</strong>
+            Click on "Export to device"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D5.png" alt="desktop instruction five">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>6/11</strong>
+            We need to change 3 settings here. "Customize information", "Date range", and "Format". Click on "Cuzstomize information" first
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D6.png" alt="desktop instruction six">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>7/11</strong>
+            Click "Clear all" for everything
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D7.png" alt="desktop instruction seven">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>8/11</strong>
+            Only check "Followers and following" and then click "Save"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D8.png" alt="desktop instruction eight">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>9/11</strong>
+            For the "Date range", click "All time" and then click "Save"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D9.png" alt="desktop instruction nine">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>10/11</strong>
+            For the "Format", click JSON and then click "Save" (this is important)
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D10.png" alt="desktop instruction ten">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>11/11</strong>
+            Your settings should look like this and then click "Start export"
+          </div>
+          <div class="step-image">
+            <img src="/images/desktop-instructions/D11.png" alt="desktop instruction eleven">
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+      </div>
+    </div>
+
+  </main>
+  <!-- ============================================ -->
+  <!--                 Footer                       -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <div class="author">By - <a href="https://www.chubbydesigns.com" target="_blank">Chubby Designs </a><span>| Chrome Extensions</span></div>
+    <div class="main">
+      © 2025 Who A'int Following Me Back. All Rights Reserved.
+      <a href="mailto:roger@chubbydesigns.com">
+        <span>Contact Us. </span>
+      </a>
+      <a href="/privacy.html" aria-label="privacy policy">
+        <span>Privacy Policy.</span>
+      </a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      direction: 'horizontal',
+      loop: true,
+      effect: 'slide'
+    })
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      swiper.slidePrev()
+    })
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      swiper.slideNext()
+    })
+  </script>
+  <script src="/js/scrape.js" defer></script>
+</body>
+</html>

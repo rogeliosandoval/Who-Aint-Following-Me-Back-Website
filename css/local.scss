@@ -1,0 +1,144 @@
+// Website Colors
+$theme-color-main: #ff3e3e;
+
+// Breakpoints
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+.pitch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  padding-top: 2rem;
+
+  img {
+    max-width: 420px;
+    border-radius: 10px;
+
+    @media (max-width: $breakpoint-tablet) {
+      width: 90%;
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    padding-top: 0;
+  }
+}
+
+.pitch-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-family: "Noto Sans", sans-serif;
+    margin-bottom: 0.5rem;
+    text-align: center;
+
+    @media (max-width: $breakpoint-phone) {
+      font-size: 1.4rem;
+    }
+  }
+
+  small {
+    color: white;
+    font-size: 1rem;
+    font-family: "Noto Sans", sans-serif;
+  }
+}
+
+.swiper {
+  position: relative;
+  width: 90%;
+  margin: 10rem auto;
+
+  --swiper-pagination-bullet-size: 15px;
+  --swiper-navigation-size: 60px;
+}
+
+.swiper-wrapper {
+  height: 550px;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.step-instructions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 500;
+  width: 500px;
+  margin: 0;
+  text-align: center;
+  color: white;
+  line-height: 2rem;
+
+  strong {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $theme-color-main;
+  }
+}
+
+.step-image {
+  img {
+    max-height: auto;
+    width: 700px;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+
+  button {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.2rem;
+    background-color: #176056;
+    border-radius: 10px;
+    transition: 0.1s linear;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0;
+    width: 200px;
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(130%);
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+      min-width: 50px;
+    }
+
+    @media (max-width: $breakpoint-phone) {
+      margin: 1.3rem 0 2rem 1.1rem;
+    }
+  }
+}
