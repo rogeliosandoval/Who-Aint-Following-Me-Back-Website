@@ -57,10 +57,19 @@ $breakpoint-desktop: 1024px;
   }
 }
 
+.how {
+  font-size: 3rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin: 10rem auto;
+}
+
 .swiper {
   position: relative;
   width: 90%;
-  margin: 10rem auto;
+  margin: 2rem auto 5rem;
 
   --swiper-pagination-bullet-size: 15px;
   --swiper-navigation-size: 60px;
@@ -68,6 +77,10 @@ $breakpoint-desktop: 1024px;
 
 .swiper-wrapper {
   height: 550px;
+
+  @media (max-width: $breakpoint-desktop) {
+    height: 520px;
+  }
 }
 
 .swiper-slide {
@@ -75,6 +88,10 @@ $breakpoint-desktop: 1024px;
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
+
+  @media (max-width: $breakpoint-desktop) {
+    flex-direction: column;
+  }
 }
 
 .step-instructions {
@@ -97,6 +114,10 @@ $breakpoint-desktop: 1024px;
     font-weight: bold;
     color: $theme-color-main;
   }
+
+  @media (max-width: $breakpoint-desktop) {
+    font-size: 1.2rem;
+  }
 }
 
 .step-image {
@@ -105,6 +126,12 @@ $breakpoint-desktop: 1024px;
     width: 700px;
     object-fit: contain;
     border-radius: 10px;
+
+    @media (max-width: $breakpoint-desktop) {
+      height: 300px;
+      width: auto;
+      margin: auto;
+    }
   }
 }
 
@@ -113,7 +140,7 @@ $breakpoint-desktop: 1024px;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   button {
     font-family: "Noto Sans", sans-serif;
@@ -140,5 +167,9 @@ $breakpoint-desktop: 1024px;
     @media (max-width: $breakpoint-phone) {
       margin: 1.3rem 0 2rem 1.1rem;
     }
+  }
+
+  @media (max-width: $breakpoint-desktop) {
+    margin-top: 0;
   }
 }

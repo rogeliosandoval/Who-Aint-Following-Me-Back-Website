@@ -50,10 +50,19 @@
   font-family: "Noto Sans", sans-serif;
 }
 
+.how {
+  font-size: 3rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  color: white;
+  margin: 10rem auto;
+}
+
 .swiper {
   position: relative;
   width: 90%;
-  margin: 10rem auto;
+  margin: 2rem auto 5rem;
   --swiper-pagination-bullet-size: 15px;
   --swiper-navigation-size: 60px;
 }
@@ -61,12 +70,22 @@
 .swiper-wrapper {
   height: 550px;
 }
+@media (max-width: 1024px) {
+  .swiper-wrapper {
+    height: 520px;
+  }
+}
 
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
+}
+@media (max-width: 1024px) {
+  .swiper-slide {
+    flex-direction: column;
+  }
 }
 
 .step-instructions {
@@ -89,6 +108,11 @@
   font-weight: bold;
   color: #ff3e3e;
 }
+@media (max-width: 1024px) {
+  .step-instructions {
+    font-size: 1.2rem;
+  }
+}
 
 .step-image img {
   max-height: auto;
@@ -97,13 +121,20 @@
      object-fit: contain;
   border-radius: 10px;
 }
+@media (max-width: 1024px) {
+  .step-image img {
+    height: 300px;
+    width: auto;
+    margin: auto;
+  }
+}
 
 .navigation-buttons {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .navigation-buttons button {
   font-family: "Noto Sans", sans-serif;
@@ -130,5 +161,10 @@
 @media (max-width: 480px) {
   .navigation-buttons button {
     margin: 1.3rem 0 2rem 1.1rem;
+  }
+}
+@media (max-width: 1024px) {
+  .navigation-buttons {
+    margin-top: 0;
   }
 }/*# sourceMappingURL=local.css.map */
