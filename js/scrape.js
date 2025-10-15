@@ -101,7 +101,7 @@ function extractUsernames(jsonData) {
       return arr
         .filter(entry => entry.string_list_data && entry.string_list_data.length)
         .map(entry => ({
-          username: entry.string_list_data[0].value,
+          username: entry.string_list_data[0].value || entry.title || '',
           href: entry.string_list_data[0].href
         }))
     }
