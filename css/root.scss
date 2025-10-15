@@ -80,6 +80,14 @@ main {
   pointer-events: none;
   opacity: 0.3;
 }
+
+.desktopHide {
+  display: none;
+
+  @media (max-width: $breakpoint-phone) {
+    display: block;
+  }
+}
 // #endregion
 
 // #region Navbar Styles

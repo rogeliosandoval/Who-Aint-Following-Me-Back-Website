@@ -120,11 +120,11 @@
     </div>
 
     <div class="how">
-      How it works (Get your <strong style="color: red;">ZIP</strong>)
+      How it works <br class="desktopHide"/>(Get your <strong style="color: red;">ZIP</strong>)
     </div>
 
-    <!-- Slider main container -->
-    <div class="swiper">
+    <!-- Desktop Instructions -->
+    <div class="swiper desktop-instructions">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -274,6 +274,147 @@
       </div>
     </div>
 
+    <!-- Mobile Instructions -->
+    <div class="swiper-mob mobile-instructions">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>1/13</strong>
+            Tap on the account settings icon in the top right corner
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M1.png" alt="mobile instruction one">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>2/13</strong>
+            Tap on the Accounts Center
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M2.png" alt="mobile instruction two">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>3/13</strong>
+            Tap on "Your information and permissions"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M3.png" alt="mobile instruction three">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>4/13</strong>
+            Tap on "Export your information"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M4.png" alt="mobile instruction four">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>5/13</strong>
+            Create an export
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M5.png" alt="mobile instruction five">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>6/13</strong>
+            Tap on "Export to device"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M6.png" alt="mobile instruction six">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>7/13</strong>
+            We are going to change these 3 settings. Start with "Customize information"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M7.png" alt="mobile instruction seven">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>8/13</strong>
+            Clear all the checkmarks
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M8.png" alt="mobile instruction eight">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>9/13</strong>
+            Only check "Followers and following"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M9.png" alt="mobile instruction nine">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>10/13</strong>
+            For the "Date range" setting, select "All time"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M10.png" alt="mobile instruction ten">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>11/13</strong>
+            For the "Format", select JSON (super important)
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M11.png" alt="mobile instruction eleven">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>12/13</strong>
+            Your settings should look like this. Tap on "Start export"
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M12.png" alt="mobile instruction twelve">
+          </div>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="step-instructions">
+            <strong>13/13</strong>
+            Simply lookout for an email in a few minutes or an hour and then download your ZIP
+          </div>
+          <div class="step-image">
+            <img src="/images/mobile-instructions/M13.png" alt="mobile instruction thirteen">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-note">
+      (swipe left/right to navigate)
+    </div>
+
   </main>
   <!-- ============================================ -->
   <!--                 Footer                       -->
@@ -293,6 +434,11 @@
   <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script>
+    const swiperMob = new Swiper('.swiper-mob', {
+      direction: 'horizontal',
+      loop: true,
+      effect: 'slide'
+    })
     const swiper = new Swiper('.swiper', {
       direction: 'horizontal',
       loop: true,

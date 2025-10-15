@@ -52,11 +52,69 @@
 
 .how {
   font-size: 3rem;
+  line-height: 3rem;
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   text-align: center;
   color: white;
   margin: 10rem auto;
+}
+@media (max-width: 1024px) {
+  .how {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin: 5rem auto 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .how {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 5rem auto 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .desktop-instructions {
+    display: none;
+  }
+}
+
+.mobile-instructions {
+  display: none;
+}
+.mobile-instructions .step-instructions {
+  font-size: 1rem !important;
+  max-width: 350px !important;
+  line-height: 1.4rem !important;
+  gap: 0.5rem !important;
+}
+.mobile-instructions .step-instructions strong {
+  font-size: 1.5rem !important;
+}
+@media (max-width: 1024px) {
+  .mobile-instructions .step-image img {
+    height: 380px !important;
+  }
+}
+@media (max-width: 480px) {
+  .mobile-instructions {
+    display: block;
+  }
+}
+
+.mobile-note {
+  display: none;
+  font-size: 1rem;
+  color: orange;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+@media (max-width: 480px) {
+  .mobile-note {
+    display: block;
+  }
 }
 
 .swiper {
@@ -160,7 +218,7 @@
 }
 @media (max-width: 480px) {
   .navigation-buttons button {
-    margin: 1.3rem 0 2rem 1.1rem;
+    margin: 0 0 2rem 1.1rem;
   }
 }
 @media (max-width: 1024px) {

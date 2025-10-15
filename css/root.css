@@ -72,6 +72,15 @@ main {
   opacity: 0.3;
 }
 
+.desktopHide {
+  display: none;
+}
+@media (max-width: 480px) {
+  .desktopHide {
+    display: block;
+  }
+}
+
 .navbar-container {
   position: absolute;
   left: 0;

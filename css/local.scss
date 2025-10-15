@@ -59,11 +59,70 @@ $breakpoint-desktop: 1024px;
 
 .how {
   font-size: 3rem;
+  line-height: 3rem;
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   text-align: center;
   color: white;
   margin: 10rem auto;
+
+  @media (max-width: $breakpoint-desktop) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    margin: 5rem auto 2rem;
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin: 5rem auto 2rem;
+  }
+}
+
+.desktop-instructions {
+  @media (max-width: $breakpoint-phone) {
+    display: none;
+  }
+}
+
+.mobile-instructions {
+  display: none;
+
+  .step-instructions {
+    font-size: 1rem !important;
+    max-width: 350px !important;
+    line-height: 1.4rem !important;
+    gap: 0.5rem !important;
+
+    strong {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .step-image {
+    img {
+      @media (max-width: $breakpoint-desktop) {
+        height: 380px !important;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-phone) {
+    display: block;
+  }
+}
+
+.mobile-note {
+  display: none;
+  font-size: 1rem;
+  color: orange;
+  font-family: "Noto Sans", sans-serif;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  @media (max-width: $breakpoint-phone) {
+    display: block;
+  }
 }
 
 .swiper {
@@ -165,7 +224,7 @@ $breakpoint-desktop: 1024px;
     }
 
     @media (max-width: $breakpoint-phone) {
-      margin: 1.3rem 0 2rem 1.1rem;
+      margin: 0 0 2rem 1.1rem;
     }
   }
 
