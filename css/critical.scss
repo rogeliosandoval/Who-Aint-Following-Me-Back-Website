@@ -179,9 +179,24 @@ $breakpoint-desktop: 1024px;
   }
 }
 
-.downloadCsvBtn {
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  margin-top: 1.4rem;
+
+  @media (max-width: $breakpoint-phone) {
+    flex-direction: column;
+    align-items: baseline;
+    margin-left: 1.1rem;
+    gap: 1.2rem;
+  }
+}
+
+.downloadCsvBtn,
+.resetBtn {
   display: none;
-  margin: 2rem auto 2rem;
   background-color: #176056;
   border-radius: 10px;
   transition: 0.1s linear;
@@ -204,10 +219,6 @@ $breakpoint-desktop: 1024px;
 
   @media (max-width: $breakpoint-tablet) {
     min-width: 50px;
-  }
-
-  @media (max-width: $breakpoint-phone) {
-    margin: 1.3rem 0 2rem 1.1rem;
   }
 }
 // #endregion

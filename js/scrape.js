@@ -2,6 +2,7 @@ const uploadSection = document.getElementById('uploadSection')
 const fileInput = document.getElementById('zipInput')
 const output = document.getElementById('output')
 const loader = document.getElementById('loader')
+let mainError = document.getElementById('mainError')
 
 let isOpening = false // prevents double file picker
 
@@ -38,51 +39,66 @@ fileInput.addEventListener('change', e => {
 })
 
 async function handleFile(event) {
-  const file = event.target.files[0]
-  if (!file) return
+  try {
+    const file = event.target.files[0]
+    if (!file) return
+  
+    const jszip = new JSZip()
+    const zipData = await jszip.loadAsync(file)
+  
+    const followers = []
+    const following = []
+  
+    let foundFollowers = false
 
-  const jszip = new JSZip()
-  const zipData = await jszip.loadAsync(file)
-
-  const followers = []
-  const following = []
-
-  for (const filename in zipData.files) {
-    if (filename.startsWith('connections/followers_and_following/followers_')) {
-      const followersJson = await zipData.files[filename].async('string')
-      const followersData = JSON.parse(followersJson)
-      followers.push(...extractUsernames(followersData))
+    for (const filename in zipData.files) {
+      if (filename.startsWith('connections/followers_and_following/followers_')) {
+        const followersJson = await zipData.files[filename].async('string')
+        const followersData = JSON.parse(followersJson)
+        followers.push(...extractUsernames(followersData))
+        foundFollowers = true
+      }
     }
+
+    if (!foundFollowers) {
+      throw new Error('Could not find followers JSON file. Please upload the correct .zip file.')
+    }
+  
+    const followingPath = 'connections/followers_and_following/following.json'
+    if (zipData.files[followingPath]) {
+      const followingJson = await zipData.files[followingPath].async('string')
+      const followingData = JSON.parse(followingJson)
+      following.push(...extractUsernames(followingData))
+    } else {
+      throw new Error('Could not find following JSON file. Please upload the correct .zip file.')
+    }
+
+    mainError.innerHTML = ''
+  
+    let notFollowingBack = following.filter(f =>
+      !followers.some(u => u.username === f.username)
+    )
+    let youDontFollowBack = followers.filter(f =>
+      !following.some(u => u.username === f.username)
+    )
+  
+    const dedupeSort = arr =>
+      [...new Map(arr.map(u => [u.username, u])).values()]
+        .sort((a, b) => a.username.localeCompare(b.username))
+  
+    notFollowingBack = dedupeSort(notFollowingBack)
+    youDontFollowBack = dedupeSort(youDontFollowBack)
+  
+    uploadSection.style.display = 'none'
+    loader.style.display = 'flex'
+  
+    setTimeout(() => {
+      renderResults(notFollowingBack, youDontFollowBack)
+      loader.style.display = 'none'
+    }, 1800)
+  } catch(error) {
+    mainError.innerHTML = error
   }
-
-  const followingPath = 'connections/followers_and_following/following.json'
-  if (zipData.files[followingPath]) {
-    const followingJson = await zipData.files[followingPath].async('string')
-    const followingData = JSON.parse(followingJson)
-    following.push(...extractUsernames(followingData))
-  }
-
-  let notFollowingBack = following.filter(f =>
-    !followers.some(u => u.username === f.username)
-  )
-  let youDontFollowBack = followers.filter(f =>
-    !following.some(u => u.username === f.username)
-  )
-
-  const dedupeSort = arr =>
-    [...new Map(arr.map(u => [u.username, u])).values()]
-      .sort((a, b) => a.username.localeCompare(b.username))
-
-  notFollowingBack = dedupeSort(notFollowingBack)
-  youDontFollowBack = dedupeSort(youDontFollowBack)
-
-  uploadSection.style.display = 'none'
-  loader.style.display = 'flex'
-
-  setTimeout(() => {
-    renderResults(notFollowingBack, youDontFollowBack)
-    loader.style.display = 'none'
-  }, 1800)
 }
 
 function extractUsernames(jsonData) {
@@ -134,6 +150,13 @@ function renderResults(notFollowingBack, youDontFollowBack) {
     downloadCSV(notFollowingBack, youDontFollowBack)
   })
   document.getElementById('downloadCsvBtn').style.display = 'block'
+  document.getElementById('resetBtn').addEventListener('click', () => {
+    output.innerHTML = ''
+    uploadSection.style.display = 'flex'
+    document.getElementById('downloadCsvBtn').style.display = 'none'
+    document.getElementById('resetBtn').style.display = 'none'
+  })
+  document.getElementById('resetBtn').style.display = 'block'
 }
 
 function downloadCSV(notFollowingBack, youDontFollowBack) {
