@@ -104,6 +104,42 @@
   background-color: rgba(14, 74, 94, 0.533);
 }
 
+#hintDesktop {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 480px) {
+  #hintDesktop {
+    display: none;
+  }
+}
+
+#hintMobile {
+  display: none;
+}
+@media (max-width: 480px) {
+  #hintMobile {
+    display: block;
+  }
+}
+
+.hint {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+}
+.hint:hover {
+  color: #ff3e3e;
+  cursor: pointer;
+}
+
 #output {
   display: flex;
   justify-content: center;
@@ -123,9 +159,9 @@
 }
 
 .result-block {
+  position: relative;
   max-height: 300px;
   width: 400px;
-  overflow: scroll;
   padding: 1rem;
   background-color: rgba(45, 69, 119, 0.6705882353);
   border-radius: 15px;
@@ -147,6 +183,8 @@
 .result-block ul {
   list-style-type: none;
   padding: 0;
+  height: 260px;
+  overflow: scroll;
 }
 .result-block li {
   font-size: 1.2rem;
@@ -175,11 +213,12 @@
 }
 
 .actions {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
   margin-top: 1.4rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 480px) {
   .actions {
@@ -284,7 +323,7 @@
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  margin: 4rem 2rem 4rem;
+  margin: 0.5rem 2rem 4rem;
   flex-wrap: wrap;
   border-radius: 10px;
 }

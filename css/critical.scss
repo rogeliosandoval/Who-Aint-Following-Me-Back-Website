@@ -109,6 +109,40 @@ $breakpoint-desktop: 1024px;
   background-color: rgba(14, 74, 94, 0.533);
 }
 
+#hintDesktop {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: $breakpoint-phone) {
+    display: none;
+  }
+}
+
+#hintMobile {
+  display: none;
+
+  @media (max-width: $breakpoint-phone) {
+    display: block;
+  }
+}
+
+.hint {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Noto Sans", sans-serif;
+  color: white;
+  font-weight: 700;
+  text-decoration: underline;
+  width: fit-content;
+  margin: auto;
+
+  &:hover {
+    color: $theme-color-main;
+    cursor: pointer;
+  }
+}
+
 #output {
   display: flex;
   justify-content: center;
@@ -126,9 +160,9 @@ $breakpoint-desktop: 1024px;
 }
 
 .result-block {
+  position: relative;
   max-height: 300px;
   width: 400px;
-  overflow: scroll;
   padding: 1rem;
   background-color: #2d4577ab;
   border-radius: 15px;
@@ -150,6 +184,8 @@ $breakpoint-desktop: 1024px;
   ul {
     list-style-type: none;
     padding: 0;
+    height: 260px;
+    overflow: scroll;
   }
 
   li {
@@ -180,11 +216,12 @@ $breakpoint-desktop: 1024px;
 }
 
 .actions {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
   margin-top: 1.4rem;
+  margin-bottom: 1rem;
 
   @media (max-width: $breakpoint-phone) {
     flex-direction: column;
@@ -281,7 +318,7 @@ $breakpoint-desktop: 1024px;
   display: flex;
   justify-content: center;
   gap: 2.5rem;
-  margin: 4rem 2rem 4rem;
+  margin: 0.5rem 2rem 4rem;
   flex-wrap: wrap;
   border-radius: 10px;
 

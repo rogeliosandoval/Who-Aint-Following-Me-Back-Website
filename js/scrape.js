@@ -3,6 +3,20 @@ const fileInput = document.getElementById('zipInput')
 const output = document.getElementById('output')
 const loader = document.getElementById('loader')
 let mainError = document.getElementById('mainError')
+const hintDesktop = document.getElementById('hintDesktop')
+const hintMobile = document.getElementById('hintMobile')
+
+hintDesktop.addEventListener('click', () => {
+  document.getElementById('instructionsDesktop').scrollIntoView({
+    behavior: 'smooth'
+  })
+})
+
+hintMobile.addEventListener('click', () => {
+  document.getElementById('instructionsMobile').scrollIntoView({
+    behavior: 'smooth'
+  })
+})
 
 let isOpening = false // prevents double file picker
 
@@ -146,6 +160,7 @@ function renderResults(notFollowingBack, youDontFollowBack) {
       </ul>
     </div>
   `
+  document.getElementById('actions').style.display = 'flex'
   document.getElementById('downloadCsvBtn').addEventListener('click', () => {
     downloadCSV(notFollowingBack, youDontFollowBack)
   })
@@ -155,6 +170,7 @@ function renderResults(notFollowingBack, youDontFollowBack) {
     uploadSection.style.display = 'flex'
     document.getElementById('downloadCsvBtn').style.display = 'none'
     document.getElementById('resetBtn').style.display = 'none'
+    document.getElementById('actions').style.display = 'none'
   })
   document.getElementById('resetBtn').style.display = 'block'
 }

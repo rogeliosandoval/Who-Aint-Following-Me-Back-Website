@@ -66,7 +66,7 @@
     <section class="cta">
       <h1>Who isn't following <span style="color: #ff0000;">YOU</span> back? 🤔</h1>
       <p class="cta-subtext">The <strong style="color: #03c30f;">SAFEST</strong> way to check who isn't following you back on <strong style="color: #ff3288;">Instagram</strong></p>
-      <span id="mainError" style="color: rgb(255, 59, 59); font-size: 0.9rem; letter-spacing: 0; margin-bottom: 1rem;"></span>
+      <span id="mainError" style="color: rgb(255, 59, 59); font-size: 1rem; letter-spacing: 0; margin-bottom: 1rem;"></span>
       <!-- <a class="disabled" href="https://chromewebstore.google.com/detail/chjeceecgnceagfbmabmkonhginfgknn?utm_source=item-share-cb" aria-label="add to chrome">
         <div class="add-chrome-button">
           <img src="/images/google-chrome-icon.svg" alt="google chrome icon">
@@ -87,13 +87,21 @@
     
     <div id="output"></div>
 
-    <div class="actions">
+    <div class="actions" id="actions">
       <button class="resetBtn" id="resetBtn" style="background: red;">
         <p>Reset Data</p>
       </button>
       <button class="downloadCsvBtn" id="downloadCsvBtn">
         <p>Download CSV</p>
       </button>
+    </div>
+
+    <div class="hint" id="hintDesktop">
+      How do I get my ZIP file?
+    </div>
+
+    <div class="hint" id="hintMobile">
+      How do I get my ZIP file?
     </div>
 
     <div class="hooks">
@@ -124,7 +132,7 @@
     </div>
 
     <!-- Desktop Instructions -->
-    <div class="swiper desktop-instructions">
+    <div class="swiper desktop-instructions" id="instructionsDesktop">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
@@ -275,7 +283,7 @@
     </div>
 
     <!-- Mobile Instructions -->
-    <div class="swiper-mob mobile-instructions">
+    <div class="swiper-mob mobile-instructions" id="instructionsMobile">
       <!-- Additional required wrapper -->
       <div class="swiper-wrapper">
         <!-- Slides -->
