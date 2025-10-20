@@ -22,6 +22,12 @@ $breakpoint-desktop: 1024px;
 .privacy-bit {
   margin-bottom: 4rem;
 
+  ul {
+    color: white;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.025rem;
+  }
+
   strong {
     display: inline-block;
     margin-bottom: 0.5rem;
