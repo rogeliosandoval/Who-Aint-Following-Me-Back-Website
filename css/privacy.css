@@ -1,6 +1,7 @@
 .privacy-container {
   max-width: 1000px;
   margin: auto;
+  padding: 1rem;
 }
 .privacy-container h1 {
   font-size: 3rem;
@@ -8,6 +9,7 @@
   font-family: "Noto Sans", sans-serif;
   text-align: center;
   margin-bottom: 4rem;
+  line-height: 3rem;
 }
 
 .privacy-bit {
