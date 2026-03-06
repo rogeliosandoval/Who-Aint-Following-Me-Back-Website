@@ -151,6 +151,49 @@ main {
   }
 }
 
+.github-star-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #24292e;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  min-width: 100px;
+  transition: 0.1s linear;
+}
+.github-star-button img {
+  max-width: 28px;
+  filter: invert(1);
+}
+@media (max-width: 480px) {
+  .github-star-button img {
+    max-width: 22px;
+  }
+}
+.github-star-button p {
+  font-size: 1.2rem;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+  white-space: nowrap;
+  letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .github-star-button p {
+    display: none;
+  }
+}
+.github-star-button:hover {
+  filter: brightness(150%);
+}
+@media (max-width: 768px) {
+  .github-star-button {
+    display: none;
+  }
+}
+
 footer {
   width: 100%;
   display: flex;
