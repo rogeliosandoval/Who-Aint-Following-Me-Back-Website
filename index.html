@@ -13,7 +13,7 @@
   <meta name="keywords" content="Instagram unfollow checker, who unfollowed me, Instagram followers, Instagram following, Instagram tool, Instagram extension, unfollow tool, check followers, Chrome extension, Who Aint Following Me Back">
 
   <!--Social Media Display-->
-  <meta property="og:title" content="Who Aint Following Me Back - Social Media Follower Checker">
+  <meta property="og:title" content="Who Aint Following Me Back - Instagram Follower Checker">
   <meta property="og:description" content="Find out who isn’t following you back on Instagram™ with Who Aint Following Me Back. Compare followers vs. following instantly in your browser. Not affiliated with Instagram™.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.whoaintfollowingmeback.com/">
@@ -28,10 +28,15 @@
   <meta name="apple-mobile-web-app-title" content="W.A.F.M.B">
   <link rel="manifest" href="/site.webmanifest">
 
+  <!--Font Preloads-->
+  <link rel="preload" href="/fonts/NotoSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/NotoSans-Bold.woff2" as="font" type="font/woff2" crossorigin>
+
   <!--Styles-->
   <link rel="stylesheet" href="/css/root-min.css">
   <link rel="stylesheet" href="/css/critical-min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" media="print" onload="this.media='all'; this.onload=null;">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"></noscript>
 
   <!--Defer loading the whole page css-->
   <link rel="stylesheet" href="/css/local-min.css" media="print" onload="this.media='all'; this.onload=null;">
@@ -41,7 +46,7 @@
     <link rel="stylesheet" href="/css/local-min.css">
   </noscript>
 
-  <title>Who Aint Following Me Back - Social Media Follower Checker</title>
+  <title>Who Aint Following Me Back - Instagram Follower Checker</title>
 </head>
 <body>
   <!--Screen reader skip main nav-->
@@ -56,13 +61,13 @@
     </a>
       <a href="https://github.com/rogeliosandoval/Who-Aint-Following-Me-Back-Extension" target="_blank" rel="noopener noreferrer" aria-label="star on github">
       <div class="github-star-button">
-        <img src="/images/github-brands-solid-full.svg" alt="github icon">
+        <img src="/images/github-brands-solid-full.svg" alt="github icon" width="28" height="28">
         <p>Star</p>
       </div>
     </a>
     <a href="https://chrome.google.com/webstore/detail/neajdljjpacikehnjanbmgdmepoiijfa" aria-label="add to chrome">
       <div class="add-chrome-button">
-        <img src="/images/google-chrome-icon.svg" alt="google chrome icon">
+        <img src="/images/google-chrome-icon.svg" alt="google chrome icon" width="35" height="35">
         <p>Add to Chrome</p>
       </div>
     </a>
@@ -71,7 +76,7 @@
 
     <section class="cta">
       <h1>Who isn't following <span style="color: #ff0000;">YOU</span> back? 🤔</h1>
-      <p class="cta-subtext">The <strong style="color: #03c30f;">SAFEST</strong> way to check who isn't following you back. <strong style="color: #ffff00;">It's FREE!</strong></p>
+      <p class="cta-subtext">The <strong style="color: #03c30f;">SAFEST</strong> Instagram unfollow checker. <strong style="color: #ffff00;">It's FREE!</strong></p>
       <span id="mainError" style="color: rgb(255, 59, 59); font-size: 1rem; letter-spacing: 0; margin-bottom: 1rem;"></span>
       <!-- <a class="disabled" href="https://chromewebstore.google.com/detail/chjeceecgnceagfbmabmkonhginfgknn?utm_source=item-share-cb" aria-label="add to chrome">
         <div class="add-chrome-button">
@@ -113,7 +118,7 @@
     <div class="hooks">
       <div class="hook">
         <strong>✅  No Login Required</strong>
-        <p>Your social media account credentials stay safe — this extension works right inside your browser, no accounts or passwords needed.</p>
+        <p>Your Instagram account credentials stay safe — this extension works right inside your browser, no accounts or passwords needed.</p>
       </div>
       <div class="hook">
         <strong>✅  100% Secure & Private</strong>
@@ -121,7 +126,7 @@
       </div>
       <div class="hook">
         <strong>✅ Safe & Non-Suspicious</strong>
-        <p>Unlike other tools, this extension doesn’t automate actions or spam. It simply compares your followers and following lists.</p>
+        <p>Unlike other tools, this extension doesn’t automate actions or spam. It simply compares your Instagram followers and following lists.</p>
       </div>
     </div>
 
@@ -158,7 +163,7 @@
             Go to the Accounts Center and click on "See more in Accounts Center"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D2.png" alt="desktop instruction two">
+            <img src="/images/desktop-instructions/D2.png" alt="desktop instruction two" width="700" height="412" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -168,7 +173,7 @@
             Go to "Your information and permissions" tab and then click "Export your information"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D3.png" alt="desktop instruction three">
+            <img src="/images/desktop-instructions/D3.png" alt="desktop instruction three" width="700" height="395" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -178,7 +183,7 @@
             Click on "Create export"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D4.png" alt="desktop instruction four">
+            <img src="/images/desktop-instructions/D4.png" alt="desktop instruction four" width="700" height="408" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -188,7 +193,7 @@
             Click on "Export to device"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D5.png" alt="desktop instruction five">
+            <img src="/images/desktop-instructions/D5.png" alt="desktop instruction five" width="700" height="417" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -198,7 +203,7 @@
             We need to change 3 settings here. "Customize information", "Date range", and "Format". Click on "Cuzstomize information" first
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D6.png" alt="desktop instruction six">
+            <img src="/images/desktop-instructions/D6.png" alt="desktop instruction six" width="700" height="485" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -208,7 +213,7 @@
             Click "Clear all" for everything
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D7.png" alt="desktop instruction seven">
+            <img src="/images/desktop-instructions/D7.png" alt="desktop instruction seven" width="700" height="501" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -218,7 +223,7 @@
             Only check "Followers and following" and then click "Save"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D8.png" alt="desktop instruction eight">
+            <img src="/images/desktop-instructions/D8.png" alt="desktop instruction eight" width="700" height="502" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -228,7 +233,7 @@
             For the "Date range", click "All time" and then click "Save"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D9.png" alt="desktop instruction nine">
+            <img src="/images/desktop-instructions/D9.png" alt="desktop instruction nine" width="700" height="497" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -238,7 +243,7 @@
             For the "Format", click JSON and then click "Save" (this is important)
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D10.png" alt="desktop instruction ten">
+            <img src="/images/desktop-instructions/D10.png" alt="desktop instruction ten" width="700" height="481" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -248,7 +253,7 @@
             Your settings should look like this and then click "Start export"
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D11.png" alt="desktop instruction eleven">
+            <img src="/images/desktop-instructions/D11.png" alt="desktop instruction eleven" width="700" height="517" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -258,7 +263,7 @@
             Within a few minutes or an hour you should get an email that looks like this. Click on "export your information"
           </div>
           <div class="step-image">
-            <img style="width: 450px;" src="/images/desktop-instructions/D12.png" alt="desktop instruction twelve">
+            <img style="width: 450px;" src="/images/desktop-instructions/D12.png" alt="desktop instruction twelve" width="450" height="495" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -268,7 +273,7 @@
             Download your ZIP
           </div>
           <div class="step-image">
-            <img src="/images/desktop-instructions/D13.png" alt="desktop instruction thirteen">
+            <img src="/images/desktop-instructions/D13.png" alt="desktop instruction thirteen" width="700" height="497" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -278,7 +283,7 @@
             Upload this file above and see who isn't following you back!
           </div>
           <div class="step-image">
-            <img style="width: 400px;" src="/images/desktop-instructions/D14.png" alt="desktop instruction fourteen">
+            <img style="width: 400px;" src="/images/desktop-instructions/D14.png" alt="desktop instruction fourteen" width="400" height="391" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
@@ -299,7 +304,7 @@
             Tap on the account settings icon in the top right corner
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M1.png" alt="mobile instruction one">
+            <img src="/images/mobile-instructions/M1.png" alt="mobile instruction one" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -309,7 +314,7 @@
             Tap on the Accounts Center
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M2.png" alt="mobile instruction two">
+            <img src="/images/mobile-instructions/M2.png" alt="mobile instruction two" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -319,7 +324,7 @@
             Tap on "Your information and permissions"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M3.png" alt="mobile instruction three">
+            <img src="/images/mobile-instructions/M3.png" alt="mobile instruction three" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -329,7 +334,7 @@
             Tap on "Export your information"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M4.png" alt="mobile instruction four">
+            <img src="/images/mobile-instructions/M4.png" alt="mobile instruction four" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -339,7 +344,7 @@
             Create an export
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M5.png" alt="mobile instruction five">
+            <img src="/images/mobile-instructions/M5.png" alt="mobile instruction five" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -349,7 +354,7 @@
             Tap on "Export to device"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M6.png" alt="mobile instruction six">
+            <img src="/images/mobile-instructions/M6.png" alt="mobile instruction six" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -359,7 +364,7 @@
             We are going to change these 3 settings. Start with "Customize information"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M7.png" alt="mobile instruction seven">
+            <img src="/images/mobile-instructions/M7.png" alt="mobile instruction seven" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -369,7 +374,7 @@
             Clear all the checkmarks
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M8.png" alt="mobile instruction eight">
+            <img src="/images/mobile-instructions/M8.png" alt="mobile instruction eight" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -379,7 +384,7 @@
             Only check "Followers and following"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M9.png" alt="mobile instruction nine">
+            <img src="/images/mobile-instructions/M9.png" alt="mobile instruction nine" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -389,7 +394,7 @@
             For the "Date range" setting, select "All time"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M10.png" alt="mobile instruction ten">
+            <img src="/images/mobile-instructions/M10.png" alt="mobile instruction ten" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -399,7 +404,7 @@
             For the "Format", select JSON (super important)
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M11.png" alt="mobile instruction eleven">
+            <img src="/images/mobile-instructions/M11.png" alt="mobile instruction eleven" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -409,7 +414,7 @@
             Your settings should look like this. Tap on "Start export"
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M12.png" alt="mobile instruction twelve">
+            <img src="/images/mobile-instructions/M12.png" alt="mobile instruction twelve" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
 
@@ -419,7 +424,7 @@
             Simply lookout for an email in a few minutes or an hour and then download your ZIP
           </div>
           <div class="step-image">
-            <img src="/images/mobile-instructions/M13.png" alt="mobile instruction thirteen">
+            <img src="/images/mobile-instructions/M13.png" alt="mobile instruction thirteen" width="368" height="800" loading="lazy" decoding="async">
           </div>
         </div>
       </div>
