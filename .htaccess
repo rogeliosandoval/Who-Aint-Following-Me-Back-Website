@@ -1,21 +1,35 @@
 RewriteEngine On
 
-# Redirect HTTP to HTTPS
-RewriteCond %{HTTPS} !=on
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+# Redirect HTTP -> HTTPS and apex -> www (canonical host) in one hop
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !=www.whoaintfollowingmeback.com [NC]
+RewriteRule ^ https://www.whoaintfollowingmeback.com%{REQUEST_URI} [R=301,L]
 
-# Redirect index.html to the root domain
-RewriteRule ^/?index\.html$ / [R=301,L]
+# Redirect index.html (as typed in the browser) to the root domain
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^ / [R=301,L]
 
-# Redirect home to the root domain
-RewriteRule ^/?home/?$ / [R=301,L]
+# Redirect /home (as typed in the browser) to the root domain
+RewriteCond %{THE_REQUEST} \s/+home/?[\s?] [NC]
+RewriteRule ^ / [R=301,L]
 
-# Remove .html extension from URLs
+# Redirect requests for .html (as typed in the browser) to their equivalent
+# without extension. Matched against THE_REQUEST (the original request line)
+# so this can't re-match after the internal .html rewrite below runs.
+RewriteCond %{THE_REQUEST} \s/+(.+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Redirect trailing-slash URLs (except the root) to their non-trailing-slash
+# equivalent, again matched against the original request line.
+RewriteCond %{THE_REQUEST} \s/+(.+)/[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# Internally serve the matching .html file for a clean URL, without
+# changing the address bar. Must be last: everything above canonicalizes
+# the browser-visible URL first, so this internal rewrite never gets
+# reprocessed against a redirect rule above it.
 RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^/]+)/?$ $1.html [L]
-
-# Redirect requests for .html to their equivalent without extension
-RewriteRule ^([^/]+)\.html$ /$1 [R=301,L]
+RewriteRule ^(.*[^/])$ $1.html [L]
 
 <IfModule mod_expires.c>
   ExpiresActive On
